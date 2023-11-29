@@ -10,6 +10,13 @@ namespace Lab_10
     {
         public delegate bool FilterDelegate(Item item, uint filterValue);
 
+        /// <summary>
+        ///  Фильтрация по значению 
+        /// </summary>
+        /// <param name="inventory"></param>
+        /// <param name="filterDelegate">Делегат</param>
+        /// <param name="filterValue">Значение по которому происходит фильтрация</param>
+        /// <returns></returns>
         public HashSet<Item> FilteredInventory(HashSet<Item> inventory, FilterDelegate filterDelegate, uint filterValue)
         {
             if (inventory != null && filterDelegate != null)

@@ -7,6 +7,9 @@ using System.Threading.Tasks;
 
 namespace Lab_10
 {
+    /// <summary>
+    /// Класс для управления предметами в инвентаре
+    /// </summary>
     public class Inventory
     {
         HashSet<Item> inventoryList = new HashSet<Item>();
@@ -17,6 +20,11 @@ namespace Lab_10
             set => inventoryList = value;
         }
 
+        /// <summary>
+        ///  Добавление нового уникального предмета в HashSet
+        /// </summary>
+        /// <param name="newItem">Новый предмет для добавления в инвентарь,идет проверка на уникальность предмета.</param>
+        /// <exception cref="ArgumentOutOfRangeException"></exception>
         public void AddItem(Item newItem)
         {
             if (newItem is not null)
@@ -29,6 +37,11 @@ namespace Lab_10
             }
         }
 
+        /// <summary>
+        /// Удаление предмета из инвентаря
+        /// </summary>
+        /// <param name="itemToDelete">Предмет для удаления</param>
+        /// <exception cref="ArgumentOutOfRangeException"></exception>
         public void DeleteItem(Item itemToDelete)
         {
             if (itemToDelete is not null && inventoryList.Contains(itemToDelete))

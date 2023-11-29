@@ -10,6 +10,11 @@ namespace Lab_10
     {
         public delegate bool ItemFilterDelegate(Item item);
 
+        /// <summary>
+        /// Сортировка массива
+        /// </summary>
+        /// <param name="inventory">список предметов</param>
+        /// <param name="compareDelegate">делегат</param>
         public void BubbleSort(HashSet<Item> inventory, ItemFilterDelegate compareDelegate)
         {
             if (inventory != null && compareDelegate != null)

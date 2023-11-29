@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace Lab_10
 {
+    /// <summary>
+    /// Класс Item содержащий свойства Item(предмета в инвентаре).
+    /// </summary>
     public class Item
     {
         private string _name;
@@ -16,6 +19,13 @@ namespace Lab_10
         private const byte MAX_ID_LENGHT = 20;
         private const byte MAX_DURABILITY = 100;
 
+        /// <summary>
+        /// Конструктор класса Item
+        /// </summary>
+        /// <param name="name">Название предмета</param>
+        /// <param name="id">ID предмета</param>
+        /// <param name="quantity">Количество</param>
+        /// <param name="durability">Прочность</param>
         public Item(string name, string id, uint quantity, uint durability)
         {
             Name = name;
@@ -29,6 +39,10 @@ namespace Lab_10
 
         }
 
+        /// <summary>
+        /// Сеттер и геттер поля _name в котором хранится название предмета,
+        /// возвращает Неправильное название, если пытаемся присвоить пустую строку.
+        /// </summary>
         public string Name
         {
             get => _name;
@@ -45,6 +59,10 @@ namespace Lab_10
             }
         }
 
+        /// <summary>
+        /// Сеттер и геттер поля _name в котором хранится ID предмета,
+        /// возвращает Неправильный id, если пытаемся присвоить пустую строку или будет неверна длина.
+        /// </summary>
         public string Id
         {
             get => _id;
@@ -61,8 +79,15 @@ namespace Lab_10
             }
         }
 
+        /// <summary>
+        /// Сеттер и геттер поля _quantity, в типе данных uint невозможно указать отрицательное значение или null.
+        /// </summary>
         public uint Quantity { get => _quantity; set => _quantity = value; }
 
+        /// <summary>
+        /// Сеттер и геттер поля _durability, в типе данных uint невозможно указать отрицательное значение или null.
+        /// Также идет проверка на то чтобы прочность не была выше 100.
+        /// </summary>
         public uint Durability
         {
             get => _durability;
